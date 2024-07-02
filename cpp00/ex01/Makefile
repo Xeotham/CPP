@@ -1,12 +1,13 @@
 #================ COMPILATOR ================#
 CPP = c++
 #=================== FLAGS ==================#
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -g -Wall -Wextra -Werror -std=c++98
 #=================== NAME ===================#
 NAME = PhoneBook
 #================== SOURCES =================#
 SRCS = Contact.cpp \
-	PhoneBook.cpp
+	PhoneBook.cpp \
+	main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
