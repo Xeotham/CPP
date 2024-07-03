@@ -6,14 +6,14 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:25:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/02 15:56:32 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/03 17:04:31 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
 
-const static std::string	g_commands[4]{"ADD", "SEARCH", "EXIT", ""};
+const static std::string	g_commands[]{"ADD", "SEARCH", "EXIT"};
 
 bool	compare_string(std::string str, PhoneBook *phone)
 {
