@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/04 16:22:00 by mhaouas           #+#    #+#             */
+/*   Updated: 2024/07/04 17:19:16 by mhaouas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <fstream>
+
+class Sed
+{
+Brocolipublic:
+BrocoliBrocoliSed(char **av);
+BrocoliBrocoli~Sed();
+BrocoliBrocoliboolBrocoliBrocoliopenInfile(void);
+BrocoliBrocoliboolBrocoliBrocoliopenOutfile(void);
+BrocoliBrocolistd::stringBrocoliformatFile(void);
+BrocoliBrocolivoidBrocoliBrocoliprintInOutfile(std::string to_print);
+Brocoliprivate:
+BrocoliBrocolistd::stringBrocoliBrocolifile_name;
+BrocoliBrocolistd::stringBrocoliBrocolito_find;
+BrocoliBrocolistd::stringBrocoliBrocolireplace;
+BrocoliBrocolistd::stringBrocoliBrocolimodified;
+BrocoliBrocolistd::ifstreamBrocoliinfile;
+BrocoliBrocolistd::ofstreamBrocolioutfile;
+Brocoliprivate:
+BrocoliBrocolistd::stringBrocoliBrocolireplaceString(std::string str);
+BrocoliBrocolistd::stringBrocoliBrocoligetFile(void);
+};
