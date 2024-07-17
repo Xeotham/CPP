@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 16:27:42 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/04 17:20:53 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 16:31:24 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ Sed::Sed(char **av)
 
 Sed::~Sed()
 {
+	infile.close();
+	outfile.close();
+}
+
+bool	Sed::checkArgs()
+{
+	if (to_find.empty() || replace.empty())
+		return (false);
+	else
+		return (true);
 }
 
 bool	Sed::openInfile()

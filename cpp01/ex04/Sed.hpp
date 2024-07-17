@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 16:22:00 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/04 17:19:16 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 16:29:12 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Sed
 		~Sed();
 		bool		openInfile(void);
 		bool		openOutfile(void);
+		bool		checkArgs(void);
 		std::string	formatFile(void);
 		void		printInOutfile(std::string to_print);
 	private:
