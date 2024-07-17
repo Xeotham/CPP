@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:01:44 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/04 15:19:25 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 14:16:55 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,30 @@
 
 HumanB::HumanB(std::string name)
 {
-	HumanB::name = name;
-	HumanB::weapon = NULL;
+	if (name.empty())
+		HumanB::_name = "nameless";
+	else
+		HumanB::_name = name;
+	HumanB::_weapon = NULL;
+	std::cout << HumanB::_name << " is born !!!" << std::endl;
 }
 
 HumanB::~HumanB()
 {
+	std::cout << "Nooooooooooo " << HumanB::_name << " was killed by a Zombie !!" << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon &weapon)
 {
-	HumanB::weapon = &weapon;
+	HumanB::_weapon = &weapon;
+	std::cout << "Someone gave a " << HumanB::_weapon->getType() << " to " << HumanB::_name << std::endl;
+
 }
 
 void	HumanB::attack()
 {
-	if (!HumanB::weapon)
-		std::cout << HumanB::name << " doesn't have a weapon ! Give him one before he die !!" << std::endl;
+	if (!HumanB::_weapon)
+		std::cout << HumanB::_name << " doesn't have a weapon ! Give him one before he die !!" << std::endl;
 	else
-		std::cout << HumanB::name << " attacks with their " << HumanB::weapon->getType() << std::endl;
+		std::cout << HumanB::_name << " attacks with their " << HumanB::_weapon->getType() << std::endl;
 }

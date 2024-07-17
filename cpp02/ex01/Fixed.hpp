@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 13:40:10 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/17 14:15:08 by mhaouas          ###   ########.fr       */
+/*   Created: 2024/07/09 09:26:09 by mhaouas           #+#    #+#             */
+/*   Updated: 2024/07/09 14:48:31 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-# define HUMANA_H
+#ifndef FIXED_H
+# define FIXED_H
 
 #include <iostream>
-#include "Weapon.hpp"
 
-class HumanA
+class Fixed
 {
 	public:
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA();
-		void	attack(void);
+		Fixed();
+		Fixed(const Fixed &raw);
+		Fixed(const int nb);
+		Fixed(const float nb);
+		~Fixed();
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		int		toInt(void) const;
+		float	toFloat(void) const;
+	public:
+		Fixed	&operator=(const Fixed &nb);
 	private:
-		std::string	_name;
-		Weapon		&_weapon;
+		int					_fixed_point_value;
+		static const int	_fractional_bits = 8;
 };
 
+std::ostream &operator << (std::ostream &out, Fixed const &fx);
 #endif

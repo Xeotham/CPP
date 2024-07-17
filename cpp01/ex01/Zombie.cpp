@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 21:20:52 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/03 21:25:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 13:52:44 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
+	if (!name.empty())
+		std::cout << "The zombie named " << Zombie::name << " died (again)." << std::endl;
 }
 
 void	Zombie::announce(void)

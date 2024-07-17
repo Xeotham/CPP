@@ -1,12 +1,12 @@
 CPP = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Moar_brainz!
+NAME = My_First_Class_in_Orthodox_Canonical_Form
 
 SRCS = main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp
+	Fixed.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)

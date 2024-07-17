@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 18:50:55 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/03 21:25:45 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 13:45:39 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Zombie
 {
-
 	public:
 		Zombie();
 		~Zombie();

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 13:36:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/04 15:17:04 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/17 14:17:58 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 		void				setType(std::string type);	
 		const std::string	&getType(void);
 	private:
-		std::string	type;
+		std::string	_type;
 };
 
 #endif

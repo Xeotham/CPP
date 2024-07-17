@@ -26,8 +26,6 @@ void	Harl::complain(std::string level)
 	size_t	i;
 
 	i = 0;
-	for (size_t i=0; level[i]; i++)
-		level[i] = tolower(level[i]);
 	while (!_comments[i].empty())
 	{
 		if (!_comments[i].compare(level))

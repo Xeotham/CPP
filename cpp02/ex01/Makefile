@@ -1,12 +1,12 @@
 CPP = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Moar_brainz!
+NAME = Towards_a_more_useful_fixed-point_number_class
 
 SRCS = main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp
+	Fixed.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
