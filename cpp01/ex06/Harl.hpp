@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 09:30:26 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/08 12:29:31 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/25 18:04:46 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Harl
 			H_WARNING,
 			H_ERROR
 		};
-		std::string	_comments[5] = {"debug", "info", "warning", "error", ""};
+		std::string	_comments[5] = {"DEBUG", "INFO", "WARNING", "ERROR", ""};
 };
 
 #endif

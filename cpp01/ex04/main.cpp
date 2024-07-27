@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 15:21:50 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/17 16:36:25 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/25 17:54:46 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ bool	error_handle(int error)
 
 int	main(int ac, char **av)
 {
-	std::string	formated_text;
+	Sed			sed(av + 1);
 	bool		error = true;
+	std::string	formated_text;
 
 	if (ac != 4)
 		error = error_handle(0);
-	Sed	sed(av + 1);
-	if (!sed.openInfile())
+	if (error && !sed.openInfile())
 		error = error_handle(1);
-	if (!sed.openOutfile())
+	if (error && !sed.openOutfile())
 		error = error_handle(2);
-	if (!sed.checkArgs())
+	if (error && !sed.checkArgs())
 		error = error_handle(3);
 	if (error)
 		sed.printInOutfile(sed.formatFile());

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 16:27:42 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/17 16:31:24 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/25 17:53:28 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Sed::Sed(char **av)
 {
+	if (!av[0] || !av[1] || !av[2])
+		return ;
 	file_name = av[0];
 	to_find = av[1];
 	replace = av[2];
@@ -27,7 +29,7 @@ Sed::~Sed()
 
 bool	Sed::checkArgs()
 {
-	if (to_find.empty() || replace.empty())
+	if (to_find.empty())
 		return (false);
 	else
 		return (true);
@@ -87,6 +89,8 @@ std::string	Sed::replaceString(std::string str)
 	tmp = str;
 	n_str = "";
 	index = tmp.find(to_find);
+	if (index == std::string::npos)
+		n_str = tmp;
 	while (index != std::string::npos)
 	{
 		index = tmp.find(to_find);

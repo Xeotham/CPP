@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 09:30:30 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/08 12:42:42 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/07/25 18:21:59 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Harl::~Harl()
 void	Harl::complain(std::string level)
 {
 	size_t	i;
+	void	(Harl::*cmd_complain[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::other};
 
 	i = 0;
 	while (!_comments[i].empty())
@@ -32,24 +33,7 @@ void	Harl::complain(std::string level)
 			break ;
 		i++;
 	}
-	switch (i)
-	{
-		case	H_DEBUG:
-			debug();
-			break ;
-		case	H_INFO:
-			info();
-			break ;
-		case	H_WARNING:
-			warning();
-			break ;
-		case	H_ERROR:
-			error();
-			break ;
-		default:
-			other();
-			break ;
-	}
+	(this->*cmd_complain[i])();
 }
 
 void	Harl::debug(void)
