@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:25:43 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/07/09 13:04:25 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/08/27 20:14:31 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main( void )
 	Fixed const	d( b );
 	
 	a = Fixed( 1234.4321f );
-	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
