@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/30 13:10:41 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/02 19:21:59 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,13 +115,17 @@ bool	Fixed::operator!=(const Fixed &right)
 
 Fixed	Fixed::operator+(const Fixed &nb)
 {
-	Fixed	new_nb(this->getRawBits() + nb.getRawBits());
+	Fixed	new_nb;
+
+	new_nb._fixed_point_value = this->getRawBits() + nb.getRawBits();
 	return (new_nb);
 }
 
 Fixed	Fixed::operator-(const Fixed &nb)
 {
-	Fixed	new_nb(this->getRawBits() - nb.getRawBits());
+	Fixed	new_nb;
+	
+	new_nb._fixed_point_value = this->getRawBits() - nb.getRawBits();
 	return (new_nb);
 }
 
