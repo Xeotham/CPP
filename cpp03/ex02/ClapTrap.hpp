@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:37:00 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 14:00:52 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/03 14:02:12 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
 		void		beRepaired(unsigned int amount);
 	public:
 		ClapTrap	&operator=(const ClapTrap& src);
-	private:
+	protected:
 		int			_hitpoints;
 		int			_energy_points;
 		int			_attack_damage;

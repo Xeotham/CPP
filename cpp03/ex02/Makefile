@@ -2,10 +2,12 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Aaaaand..._OPEN\!
+NAME = Repetitive_work
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

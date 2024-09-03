@@ -2,10 +2,11 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Aaaaand..._OPEN\!
+NAME =  Serena,_my_love\!
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
