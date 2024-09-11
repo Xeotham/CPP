@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:13:45 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 12:24:35 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/11 11:50:24 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ Fixed	Point::getY()	const
 
 Point	&Point::operator=(const Point &new_point)
 {
-	if (static_cast<Fixed>(this->_x) != static_cast<Fixed>(new_point._x))
-		static_cast<Fixed>(this->_x) = new_point._x;
-	if (static_cast<Fixed>(this->_y) != static_cast<Fixed>(new_point._y))
-		static_cast<Fixed>(this->_y) = new_point._y;
+	if (const_cast<Fixed&>(this->_x) != const_cast<Fixed&>(new_point._x))
+		const_cast<Fixed&>(this->_x) = new_point._x;
+	if (const_cast<Fixed&>(this->_y) != const_cast<Fixed&>(new_point._y))
+		const_cast<Fixed&>(this->_y) = new_point._y;
 	return (*this);
 }

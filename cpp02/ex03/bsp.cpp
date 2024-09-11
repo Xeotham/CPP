@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:13:37 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 12:25:54 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/11 11:59:29 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 
 	w1 = findW1(a, b, c, point);
 	w2 = findW2(a, b, c, point);
-	if (w1 < 0 || w2 < 0 || (w1 + w2) > 1)
+	if (w1 <= 0 || w2 <= 0 || (w1 + w2) >= 1)
 		return (false);
 	else
 		return (true);
