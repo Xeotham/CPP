@@ -6,18 +6,18 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:00:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 12:30:30 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:09:05 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap()
 {
 	std::cout << "FragTrap Default Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
 	std::cout << "FragTrap Parameter Constructor called" << std::endl;
 	this->_name = name;

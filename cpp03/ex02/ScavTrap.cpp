@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:23:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 14:55:10 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:30:07 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap Parameter Constructor called" << std::endl;
 	this->_name = name;
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& src)
+ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src)
 {
 	std::cout << "ScavTrap Copy Constructor called" << std::endl;
 	*this = src;
