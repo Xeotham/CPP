@@ -2,13 +2,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Now_it\'s_weird\!
+NAME = I_don\'t_want_to_set_the_world_on_fire
 
 SRCS =	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp \
-		DiamondTrap.cpp \
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
+		Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
