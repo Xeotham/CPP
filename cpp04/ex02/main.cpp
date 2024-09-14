@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:13 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 11:59:58 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/14 12:39:05 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,18 @@
 
 int main()
 {
-	{
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
-		delete j;
-		delete i;
-	}
-	{
-		Animal*	animal_refuge[MAX_ANIMALS];
+	const Animal	*scooby_doo = new Dog();
+	const Animal	*goofy = new Dog();
+	const Animal	*garfield = new Cat();
+	const Animal	*puss_in_boots = new Cat();
 
-		for (int i = 0; i < MAX_ANIMALS; i++)
-		{
-			if (i % 2 == 0)
-				animal_refuge[i] = new Dog();
-			else
-				animal_refuge[i] = new Cat();
-		}
-		for (int i = 0; i < MAX_ANIMALS; i++)
-			delete animal_refuge[i];
-		return 0;
-	}
+	scooby_doo->makeSound();
+	goofy->makeSound();
+	garfield->makeSound();
+	puss_in_boots->makeSound();
+
+	delete scooby_doo;
+	delete goofy;
+	delete garfield;
+	delete puss_in_boots;
 }

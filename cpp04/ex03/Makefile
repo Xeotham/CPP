@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Now_it\'s_weird\!
+NAME = Interface_\&_recap
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
