@@ -5,10 +5,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 NAME = Interface_\&_recap
 
 SRCS =	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp \
-		DiamondTrap.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		ICharacter.cpp \
+		IMateriaSource.cpp \
+		MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
