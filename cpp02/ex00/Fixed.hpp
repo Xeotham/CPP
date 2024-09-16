@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:09 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/30 13:15:55 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 10:07:34 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 
 class Fixed
 {
-	public:
+	public://	Construcor / Destructor
 		Fixed();
-		Fixed(Fixed &raw);
+		Fixed(const Fixed &raw);
 		~Fixed();
+	public://	Operator overload
 		Fixed &operator=(const Fixed &nb);
+	public://	Methods
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-	private:
+	private://	Privates attributs
 		int					_fixed_point_value;
 		static const int	_fractional_bits = 8;
 };
