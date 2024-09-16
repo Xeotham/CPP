@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:00:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 15:02:10 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:25:44 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 class FragTrap : public ClapTrap
 {
-	public:
+	public://	Constructor / Destructor
 		FragTrap();
+		~FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& src);
-		~FragTrap();
-		FragTrap& operator=(const FragTrap& src);
+	public://	Public methods
 		void highFivesGuys(void);
+	public://	Operator Overload
+		FragTrap& operator=(const FragTrap& src);
 };
 
 #endif

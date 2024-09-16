@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:13:27 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 13:14:01 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:35:02 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 {
 	std::cout << "DiamondTrap Parameter Constructor called" << std::endl;
 	this->_name = name;
-	this->_hitpoints = 100;
-	this->_energy_points = 50;
-	this->_attack_damage = 30;
+	this->_hitpoints = FragTrap::__hitpoints;
+	this->_energy_points = ScavTrap::__energy_points;
+	this->_attack_damage = FragTrap::__attack_damage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src._name + "_clap_name"), ScavTrap(src._name), FragTrap(src._name)
@@ -40,11 +40,15 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& src)
 {
 	std::cout << "DiamondTrap Assignation Operator called" << std::endl;
-	ClapTrap::_name = src._name + "_clap_name";
-	this->_name = src._name;
-	this->_hitpoints = src._hitpoints;
-	this->_energy_points = src._energy_points;
-	this->_attack_damage = src._attack_damage;
+	if (this != &src)
+	{
+		ClapTrap::_name = src._name + "_clap_name";
+		this->_name = src._name;
+		this->_hitpoints = src._hitpoints;
+		this->_energy_points = src._energy_points;
+		this->_attack_damage = src._attack_damage;
+		this->_is_guard = src._is_guard;
+	}
 	return (*this);
 }
 

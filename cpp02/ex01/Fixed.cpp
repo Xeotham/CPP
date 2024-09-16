@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/28 12:14:56 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:39:42 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-	_fixed_point_value = 0;
+	this->_fixed_point_value = 0;
 }
 
 Fixed::Fixed(const Fixed &raw)
@@ -45,18 +45,18 @@ Fixed::~Fixed()
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (_fixed_point_value);
+	return (this->_fixed_point_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	_fixed_point_value = raw;
+	this->_fixed_point_value = raw;
 }
 
 int	Fixed::toInt(void) const
 {
-	return (roundf(Fixed::toFloat()));
+	return (static_cast<int>(Fixed::toFloat()));
 }
 
 float	Fixed::toFloat(void) const

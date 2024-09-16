@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:13:14 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 12:24:40 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:35:06 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
-	public:
+	public://	Constructor / Destructor
 		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap& src);
 		~DiamondTrap();
-		DiamondTrap& operator=(const DiamondTrap& src);
+	public://	Public methods
 		void	whoAmI();
-	private:
+	public://	Operator Overload
+		DiamondTrap& operator=(const DiamondTrap& src);
+	private://	Private attributs
 		std::string	_name;
 };
 

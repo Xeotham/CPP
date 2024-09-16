@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:36:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 13:47:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:14:18 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,21 +87,21 @@ void	DiamondScop(void)
 	diamondjunior.takeDamage(1);
 	diamondjunior.attack("George");
 	diamondjunior.whoAmI();
-	for (size_t i = 0; i < 100 ; i++)
+	for (size_t i = 0; i < 50 ; i++)
 		diamondjunior2.attack("George");
 	diamondjunior2.whoAmI();
 }
 
 int main()
 {
-	// std::cout << "===== ClapTrap Tests =====\n" << std::endl;
-	// ClapScop();
-	// std::cout << "\n===== ScavTrap Tests =====\n" << std::endl;
-	// ScavScop();
-	// std::cout << "\n===== FragTrap Tests =====\n" << std::endl;
-	// FragScop();
-	// std::cout << "\n===== DiamondTrap Tests =====\n" << std::endl;
-	// DiamondScop();
+	std::cout << "===== ClapTrap Tests =====\n" << std::endl;
+	ClapScop();
+	std::cout << "\n===== ScavTrap Tests =====\n" << std::endl;
+	ScavScop();
+	std::cout << "\n===== FragTrap Tests =====\n" << std::endl;
+	FragScop();
+	std::cout << "\n===== DiamondTrap Tests =====\n" << std::endl;
+	DiamondScop();
 
 	ClapTrap *test = new DiamondTrap("Diamond");
 	delete test;

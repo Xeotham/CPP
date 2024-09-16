@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:00:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 12:09:05 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:08:04 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,13 @@ FragTrap::~FragTrap()
 FragTrap& FragTrap::operator=(const FragTrap& src)
 {
 	std::cout << "FragTrap Assignation Operator called" << std::endl;
-	this->_name = src._name;
-	this->_hitpoints = src._hitpoints;
-	this->_energy_points = src._energy_points;
-	this->_attack_damage = src._attack_damage;
+	if (this != &src)
+	{
+		this->_name = src._name;
+		this->_hitpoints = src._hitpoints;
+		this->_energy_points = src._energy_points;
+		this->_attack_damage = src._attack_damage;
+	}
 	return (*this);
 }
 

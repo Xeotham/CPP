@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:36:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 13:08:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:50:39 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int main()
 	bobjunior.takeDamage(10);
 	bobjunior.attack("George");
 	fredjunior.attack("Globox");
-	return 0;
+	return (0);
 }

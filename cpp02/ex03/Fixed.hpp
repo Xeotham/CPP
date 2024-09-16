@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:09 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/30 13:15:37 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:17:22 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,44 @@
 
 class Fixed
 {
-	public:
+	public://	Constructor / Destructor
 		Fixed();
 		Fixed(const Fixed &raw);
 		Fixed(const int nb);
 		Fixed(const float nb);
 		~Fixed();
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		int		toInt(void) const;
-		float	toFloat(void) const;
-	public://	assignement operator
+	public://	Public Methods
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
+		int					toInt(void) const;
+		float				toFloat(void) const;
+		static Fixed		&min(Fixed &first, Fixed &second);
+		static const Fixed	&min(const Fixed &first, const Fixed &second);
+		static Fixed		&max(Fixed &first, Fixed &second);
+		static const Fixed	&max(const Fixed &first, const Fixed &second);
+	public://	Operator Overload
+	//				Assignement Operator
 		Fixed	&operator=(const int &nb);
 		Fixed	&operator=(const float &nb);
 		Fixed	&operator=(const Fixed &nb);
-	public://	Fixed Comparison operator :
+	//	Fixed Comparison operator :
 		bool	operator>(const Fixed &nb);
 		bool	operator>=(const Fixed &nb);
 		bool	operator<(const Fixed &nb);
 		bool	operator<=(const Fixed &nb);
 		bool	operator==(const Fixed &nb);
 		bool	operator!=(const Fixed &nb);
-	public://	Fixed Arithmetic operator :
+	//	Fixed Arithmetic operator :
 		Fixed	operator+(const Fixed &nb);
 		Fixed	operator-(const Fixed &nb);
 		Fixed	operator*(const Fixed &nb);
 		Fixed	operator/(const Fixed &nb);
-	public://	Fixed Increment/decrement operator :
+	//	Fixed Increment/decrement operator :
 		Fixed	&operator++();
 		Fixed	operator++(int);
 		Fixed	&operator--();
 		Fixed	operator--(int);
-	public://	Fixed function overload :
-		static Fixed		&min(Fixed &first, Fixed &second);
-		static const Fixed	&min(const Fixed &first, const Fixed &second);
-		static Fixed		&max(Fixed &first, Fixed &second);
-		static const Fixed	&max(const Fixed &first, const Fixed &second);
-	private:
+	private://	Private attributs
 		int					_fixed_point_value;
 		static const int	_fractional_bits = 8;
 };

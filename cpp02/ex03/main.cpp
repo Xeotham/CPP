@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:25:43 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 12:02:27 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 11:09:01 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int main( void )
 	print_triangle(bsp(a,b,c,point3));
 	std::cout << std::endl;
 	print_triangle(bsp(a,b,c,point4));
+	std::cout << std::endl;
+	print_triangle(bsp(a,b,c,test));
 	return (0);
 }

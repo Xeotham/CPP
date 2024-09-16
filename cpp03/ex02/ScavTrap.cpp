@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:23:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 12:30:07 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:16:59 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
+	this->_is_guard = false;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -24,6 +25,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitpoints = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
+	this->_is_guard = false;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src)
@@ -40,11 +42,14 @@ ScavTrap::~ScavTrap()
 ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 {
 	std::cout << "ScavTrap Assignation Operator called" << std::endl;
-	this->_is_guard = src._is_guard;
-	this->_name = src._name;
-	this->_hitpoints = src._hitpoints;
-	this->_energy_points = src._energy_points;
-	this->_attack_damage = src._attack_damage;
+	if (this != &src)
+	{
+		this->_is_guard = src._is_guard;
+		this->_name = src._name;
+		this->_hitpoints = src._hitpoints;
+		this->_energy_points = src._energy_points;
+		this->_attack_damage = src._attack_damage;
+	}
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:23:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/03 14:54:08 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:21:52 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
 
 class ScavTrap : public ClapTrap
 {
-	public:
+	public://	Constructor / Destructor
 		ScavTrap();
-		~ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& src);
+		~ScavTrap();
+	public://	Public methods
 		void	attack(std::string const & target);
 		void	guardGate();
-	public:
+	public://	Operator Overload
 		ScavTrap	&operator=(const ScavTrap& src);
-	private:
+	private://	Private attributs
 		bool	_is_guard;
 };
 

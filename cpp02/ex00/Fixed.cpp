@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 10:43:42 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:36:33 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-	_fixed_point_value = 0;
+	this->_fixed_point_value = 0;
 }
 
 Fixed::Fixed(const Fixed &raw)

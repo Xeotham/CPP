@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:09 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/30 13:15:42 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 10:54:32 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Fixed
 		Fixed(const int nb);
 		Fixed(const float nb);
 		~Fixed();
+	public://	Pubic Methods
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		int		toInt(void) const;
@@ -53,7 +54,7 @@ class Fixed
 		static const Fixed	&min(const Fixed &first, const Fixed &second);
 		static Fixed		&max(Fixed &first, Fixed &second);
 		static const Fixed	&max(const Fixed &first, const Fixed &second);
-	private:
+	private://	Private attributs
 		int					_fixed_point_value;
 		static const int	_fractional_bits = 8;
 };

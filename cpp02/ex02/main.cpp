@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:25:43 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/08/30 12:27:10 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 10:57:49 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+
 	std::cout << b << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+
 	std::cout << c << std::endl;
 	std::cout << d << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
 	std::cout << Fixed::min( c, d ) << std::endl;
 	std::cout << Fixed::max( c, d ) << std::endl;
 	std::cout << c - d << std::endl;
