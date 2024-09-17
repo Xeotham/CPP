@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:46:01 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 23:56:07 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:22:19 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class Cure : public AMateria
 		Cure();
 		Cure(const Cure &src);
 		virtual ~Cure();
-		Cure &operator=(const Cure &rhs);
+	public:
 		AMateria* clone() const;
 		void use(ICharacter& target);
+	public:
+		Cure &operator=(const Cure &rhs);
 };
 
 #endif

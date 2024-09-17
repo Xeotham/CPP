@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 17:20:45 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:46:01 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat() : Animal()
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &src) : Animal()
+Cat::Cat(const Cat &src) : Animal(src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;

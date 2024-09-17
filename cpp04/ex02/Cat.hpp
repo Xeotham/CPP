@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 11:43:16 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:18:02 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class	Cat : public Animal
 	public:
 		Cat();
 		Cat(const Cat &other);
-		Cat &operator=(const Cat &other);
 		~Cat();
+	public:
 		void makeSound() const;
+	public:
+		Cat &operator=(const Cat &other);
 	private:
 		Brain *brain;
 };

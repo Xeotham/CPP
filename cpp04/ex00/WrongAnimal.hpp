@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:53:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 16:54:22 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:10:10 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ class	WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &other);
-		WrongAnimal &operator=(const WrongAnimal &other);
 		virtual ~WrongAnimal();
+	public:
 		virtual void	makeSound() const;
 		std::string		getType() const;
+	public:
+		WrongAnimal &operator=(const WrongAnimal &other);
 	protected:
 		std::string _type;
 };

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 12:28:59 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:22:46 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 class	Animal
 {
 	public:
-		Animal &operator=(const Animal &other);
 		virtual ~Animal();
-		virtual void	makeSound() const;
+	public:
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
+	public:
+		Animal &operator=(const Animal &other);
 	protected:
 		Animal();
 		Animal(const Animal &other);

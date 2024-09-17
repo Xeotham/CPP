@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:19:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/15 01:09:54 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:41:31 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 	{
 		for (int i = 0; i < 4; i++)
 		{
+			if (this->_materia[i])
+				delete this->_materia[i];
 			if (rhs._materia[i])
 				this->_materia[i] = rhs._materia[i]->clone();
 			else

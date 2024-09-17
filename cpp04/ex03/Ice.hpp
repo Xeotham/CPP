@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:45:51 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 23:37:44 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:21:58 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class Ice : public AMateria
 		Ice();
 		Ice(const Ice &src);
 		virtual ~Ice();
-		Ice &operator=(const Ice &rhs);
+	public:
 		AMateria* clone() const;
 		void use(ICharacter& target);
+	public:
+		Ice &operator=(const Ice &rhs);
 };
 
 #endif

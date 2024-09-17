@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 17:12:03 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:09:50 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ class	GoofDog : public WrongAnimal
 	public:
 		GoofDog();
 		GoofDog(const GoofDog &other);
-		GoofDog &operator=(const GoofDog &other);
 		~GoofDog();
+	public:
 		void makeSound() const;
+	public:
+		GoofDog &operator=(const GoofDog &other);
 };
 
 #endif

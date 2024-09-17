@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 17:20:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:45:08 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ Animal &Animal::operator=(const Animal &src)
 {
 	std::cout << "Animal assignation operator called" << std::endl;
 	if (this != &src)
-	{
 		this->_type = src._type;
-	}
 	return (*this);
 }
 

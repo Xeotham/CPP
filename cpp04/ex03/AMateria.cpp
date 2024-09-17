@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:45:20 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/15 01:30:29 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 17:12:26 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ AMateria::~AMateria()
 AMateria &AMateria::operator=(const AMateria &new_materia)
 {
 	if (this != &new_materia)
-	{
 		this->_type = new_materia._type;
-	}
 	return (*this);
 }
 

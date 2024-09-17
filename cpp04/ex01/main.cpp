@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:13 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/14 11:59:58 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/16 16:15:14 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ int main()
 				animal_refuge[i] = new Cat();
 		}
 		for (int i = 0; i < MAX_ANIMALS; i++)
+		{
+			animal_refuge[i]->makeSound();
 			delete animal_refuge[i];
+		}
 		return 0;
 	}
 }
