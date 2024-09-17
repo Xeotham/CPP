@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 11:06:57 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/17 11:14:40 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,11 @@ float	Fixed::toFloat(void) const
 }
 
 /* ===== Overload ===== */
-//	Comaprison operators
 
 Fixed	&Fixed::operator=(const Fixed &nb)
 {
 	// std::cout << "Copy Fixed assignement operator called" << std::endl;
-	if (this->_fixed_point_value != nb._fixed_point_value)
+	if (this != &nb)
 		this->_fixed_point_value = nb._fixed_point_value;
 	return (*this);
 }
@@ -91,6 +90,7 @@ Fixed	&Fixed::operator=(const float &nb)
 	return (*this);
 }
 
+//	Comaprison operators
 bool	Fixed::operator>(const Fixed &right)
 {
 	// std::cout << "Greater than operator called" << std::endl;

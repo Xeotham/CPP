@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 09:26:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 12:36:33 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/17 11:13:49 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Fixed::setRawBits(int const raw)
 Fixed	&Fixed::operator=(const Fixed &nb)
 {
 	std::cout << "Copy assignement operator called" << std::endl;
-	if (this->_fixed_point_value != nb.getRawBits())
+	if (this != &nb)
 		this->_fixed_point_value = nb.getRawBits();
 	return (*this);
 }

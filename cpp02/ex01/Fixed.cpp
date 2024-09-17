@@ -67,7 +67,7 @@ float	Fixed::toFloat(void) const
 Fixed	&Fixed::operator=(const Fixed &nb)
 {
 	std::cout << "Copy assignement operator called" << std::endl;
-	if (this->_fixed_point_value != nb._fixed_point_value)
+	if (this != &nb)
 		this->_fixed_point_value = nb._fixed_point_value;
 	return (*this);
 }
