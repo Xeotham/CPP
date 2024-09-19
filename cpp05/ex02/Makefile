@@ -6,7 +6,8 @@ NAME = 'Form up, maggots!'
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp
+		AForm.cpp \
+		ShruberryCreationForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

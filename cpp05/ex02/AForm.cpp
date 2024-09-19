@@ -6,13 +6,13 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/18 15:14:18 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/19 20:41:16 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("Nameless Form"), _sign_grade(150)
+AForm::AForm() : _name("Nameless Form"), _sign_grade(150), _exec_grade(150)
 {
 	this->_is_signed = false;
 }
