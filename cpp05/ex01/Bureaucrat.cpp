@@ -51,6 +51,19 @@ void	Bureaucrat::demote()
 		++this->_grade;
 }
 
+void	Bureaucrat::signForm(Form &to_sign)
+{
+	try
+	{
+		to_sign.beSigned(*this);
+		std::cout << this->getName() << " signed "  << to_sign.getName() << "." << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << to_sign.getName() << " because " <<  e.what() << std::endl;
+	}
+}
+
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)

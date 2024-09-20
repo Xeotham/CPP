@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 09:59:58 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/18 15:10:18 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/20 13:08:41 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
+
+class	Bureaucrat;
 
 class	Form
 {
@@ -29,14 +31,11 @@ class	Form
 		const std::string	getName() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
-		Bureaucrat			getSigner() const;
 		void				beSigned(Bureaucrat &signer);
-		void				signForm();
 	public:
 		Form	&operator=(const Form &new_form);
 	private:
 		bool				_is_signed;
-		Bureaucrat			_signer;
 		const std::string	_name;
 		const int			_sign_grade;
 		const int			_exec_grade;

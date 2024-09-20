@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/19 20:41:30 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/20 13:09:05 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,29 +55,13 @@ int	Form::getExecGrade() const
 	return (this->_exec_grade);
 }
 
-Bureaucrat	Form::getSigner() const
-{
-	return (this->_signer);
-}
-
 void	Form::beSigned(Bureaucrat &signer)
 {
 	if (this->getIsSigned() == true)
 		return ;
-	this->_signer = signer;
 	if (signer.getGrade() > this->getSignGrade())
 		throw (Form::GradeTooLowException());
 	this->_is_signed = true;
-}
-
-void	Form::signForm()
-{
-	if (this->_is_signed == true)
-		std::cout << this->_signer.getName() << " signed " << this->getName() << "." << std::endl;
-	else if (this->_is_signed == false && this->_signer.getName() == "Nameless")
-		std::cout << "Nobody signed " << this->getName() << "." << std::endl;
-	else
-		std::cout << this->_signer.getName() << " couldn't sign " << this->getName() << " because skill issue." << std::endl;
 }
 
 Form	&Form::operator=(const Form &new_form)
@@ -85,9 +69,9 @@ Form	&Form::operator=(const Form &new_form)
 	if (this != &new_form)
 	{
 		this->_is_signed = new_form.getIsSigned();
-		this->_signer = new_form.getSigner();
 		const_cast<std::string &>(this->_name) = new_form.getName();
 		const_cast<int &>(this->_sign_grade) = new_form.getSignGrade();
+		const_cast<int &>(this->_exec_grade) = new_form.getExecGrade();
 	}
 	return (*this);
 }
@@ -104,6 +88,6 @@ const char	*Form::GradeTooLowException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &out, const Form &in)
 {
-	std::cout << in.getName() << ", form grade " << in.getSignGrade() << ".";
+	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade() << ".";
 	return (out);
 }

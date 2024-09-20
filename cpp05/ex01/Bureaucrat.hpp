@@ -4,6 +4,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
+
+class	Form;
 
 class Bureaucrat
 {
@@ -17,6 +20,7 @@ class Bureaucrat
 		int					getGrade() const;
 		void				promote();
 		void				demote();
+		void				signForm(Form &to_sign);
 	public:
 		Bureaucrat	&operator=(Bureaucrat const & rhs);
 	private:

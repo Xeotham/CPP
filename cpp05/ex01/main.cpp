@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:47:33 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/18 11:10:33 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/20 13:15:06 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,13 @@ int	main()
 	try
 	{
 		Bureaucrat	fred("Fred", 1), bob("Bob", 150);
-		Form		form1("Form 1", 1), form2(form1), form3;
+		Form		form1("Form 1", 1, 1), form2(form1), form3;
 
 		std::cout << form1 << std::endl;
-		form1.signForm();
 		form1.beSigned(fred);
-		form1.signForm();
+		fred.signForm(form2);
 		form1.beSigned(bob);
-		form1.signForm();
 		form3 = form1;
-		std::cout << form1.getSigner().getName() << std::endl;
-		std::cout << form2.getSigner().getName() << std::endl;
-		std::cout << form3.getSigner().getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -37,7 +32,7 @@ int	main()
 	}
 	try
 	{
-		Form	bob("Bob", -1);
+		Form	bob("Bob", 0, 0);
 	}
 	catch(const std::exception& e)
 	{
@@ -45,7 +40,7 @@ int	main()
 	}
 	try
 	{
-		Form	globglob("GlobGlob", 151);
+		Form	globglob("GlobGlob", 151, 151);
 		std::cout << globglob << std::endl;
 	}
 	catch(const std::exception& e)
@@ -55,10 +50,11 @@ int	main()
 	try
 	{
 		Bureaucrat	glabglab("Glabglab", 100);
-		Form		glabform("Glab Form", 1);
+		Form		glabform("Glab Form", 1, 1);
 
 		std::cout << glabglab << std::endl;
 		std::cout << glabform << std::endl;
+		glabglab.signForm(glabform);
 		glabform.beSigned(glabglab);
 	}
 	catch(const std::exception& e)
