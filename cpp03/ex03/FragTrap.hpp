@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:00:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 13:30:08 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/20 17:02:31 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ class FragTrap : virtual public ClapTrap
 		void highFivesGuys(void);
 	public://		Operator Overload
 		FragTrap& operator=(const FragTrap& src);
-	protected://	FragTrap stats
-		static const int	__hitpoints = 100;
-		static const int	__energy_points = 100;
-		static const int	__attack_damage = 30;
 };
 
 #endif
