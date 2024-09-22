@@ -2,12 +2,10 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex02
+NAME = 'Form up, maggots'
 
 SRCS =	main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp \
-		FragTrap.cpp \
+		
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -16,7 +14,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.c
+%.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
