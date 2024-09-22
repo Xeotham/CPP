@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = 'Mommy, when I grow up, I want to be a bureaucrat!'
+NAME = ex00
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp

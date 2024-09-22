@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = I_don\'t_want_to_set_the_world_on_fire
+NAME = ex01
 
 SRCS =	main.cpp \
 		Animal.cpp \

@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Polymorphism
+NAME = ex00
 
 SRCS =	main.cpp \
 		Animal.cpp \

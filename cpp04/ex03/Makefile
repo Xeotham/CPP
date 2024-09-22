@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = Interface_\&_recap
+NAME = ex03
 
 SRCS =	main.cpp \
 		AMateria.cpp \

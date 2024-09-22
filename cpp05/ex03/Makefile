@@ -2,7 +2,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = 'Form up, maggots!'
+NAME = ex03
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
