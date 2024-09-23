@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:00:16 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/20 10:53:27 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 07:49:26 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,12 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	if (random % 2 == 0)
 		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else
-		std::cout << "The robotomy on " << _target << " failed." << std::endl;
+		std::cout << "The robotomy on " << this->_target << " failed." << std::endl;
 }
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm &new_form)
 {
 	if (this != &new_form)
-	{
-		Bureaucrat	tmp(new_form.getSigner());
-		this->setSigner(tmp);
 		this->_target = new_form._target;
-	}
 	return (*this);
 }

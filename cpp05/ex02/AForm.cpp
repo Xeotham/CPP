@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/20 13:15:52 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 07:47:28 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 AForm::AForm() : _name("Nameless Form"), _sign_grade(150), _exec_grade(150)
 {
 	this->_is_signed = false;
-	this->_signer = NULL;
 }
 
 AForm::AForm(const std::string name, int sign_grade, int exec_grade) : _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
@@ -25,7 +24,6 @@ AForm::AForm(const std::string name, int sign_grade, int exec_grade) : _name(nam
 	else if (this->_sign_grade > 150 || this->_sign_grade > 150)
 		throw(AForm::GradeTooLowException());
 	this->_is_signed = false;
-	this->_signer = NULL;
 }
 
 AForm::AForm(const AForm &new_form) : _name(new_form.getName()), _sign_grade(new_form.getSignGrade()), _exec_grade(new_form.getExecGrade())
@@ -57,10 +55,6 @@ int	AForm::getExecGrade() const
 	return (this->_exec_grade);
 }
 
-Bureaucrat	&AForm::getSigner() const
-{
-	return (*this->_signer);
-}
 
 void	AForm::setIsSigned(const bool new_is_signed)
 {
@@ -77,16 +71,11 @@ void	AForm::setExecGrade(const int new_exec_grade)
 	const_cast<int &>(this->_exec_grade) = new_exec_grade;
 }
 
-void	AForm::setSigner(Bureaucrat &new_signer)
-{
-	this->_signer = &new_signer;
-}
 
 void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (this->getIsSigned() == true)
 		return ;
-	this->_signer = &signer;
 	if (signer.getGrade() > this->getSignGrade())
 		throw (AForm::GradeTooLowException());
 	this->_is_signed = true;
@@ -97,7 +86,6 @@ AForm	&AForm::operator=(const AForm &new_form)
 	if (this != &new_form)
 	{
 		this->_is_signed = new_form.getIsSigned();
-		this->_signer = &new_form.getSigner();
 		const_cast<std::string &>(this->_name) = new_form.getName();
 		const_cast<int &>(this->_sign_grade) = new_form.getSignGrade();
 	}

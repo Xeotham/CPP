@@ -9,7 +9,8 @@ SRCS =	main.cpp \
 		AForm.cpp \
 		ShruberryCreationForm.cpp \
 		PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp
+		RobotomyRequestForm.cpp \
+		Intern.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -18,7 +19,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.c
+%.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :

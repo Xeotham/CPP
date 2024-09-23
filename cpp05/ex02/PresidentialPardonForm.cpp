@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:00:16 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/20 09:26:18 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 07:48:04 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm &new_form)
 {
 	if (this != &new_form)
-	{
-		Bureaucrat	tmp(new_form.getSigner());
-		this->setSigner(tmp);
 		this->_target = new_form._target;
-	}
 	return (*this);
 }

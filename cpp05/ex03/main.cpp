@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:47:33 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/20 10:52:11 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 08:23:34 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,65 @@
 #include "ShruberryCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
 	try
 	{
-		ShruberryCreationForm	form1("Garden");
-		PresidentialPardonForm	form2("Bob");
-		RobotomyRequestForm		form3("Bender");
-		Bureaucrat				bob("Bob", 1);
+		Intern	frank;
 
-		form1.beSigned(bob);
-		form2.beSigned(bob);
-		form3.beSigned(bob);
-		form1.execute(bob);
-		form2.execute(bob);
-		form3.execute(bob);
+		frank.makeForm("TEST", "TEST");
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 	try
 	{
-		ShruberryCreationForm	form("Garden");
-		Bureaucrat				fred("Fred", 1);
+		Intern		glob;
+		Bureaucrat	bob("Bob", 1);
+		AForm		*form;
 
-		form.execute(fred);
-		form.signForm();
+		form = glob.makeForm("shruberry creation", "test");
+		bob.signForm(*form);
+		bob.executeForm(*form);
+		delete form;
+		form = glob.makeForm("SHrUbERry CREAtIOn", "Test2");
+		bob.signForm(*form);
+		bob.executeForm(*form);
+		delete form;
+		form = glob.makeForm("Presidential Pardon", "Fred");
+		bob.signForm(*form);
+		bob.executeForm(*form);
+		delete form;
+		form = glob.makeForm("Robotomy Request", "Didi");
+		bob.signForm(*form);
+		bob.executeForm(*form);
+		delete form;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 	try
 	{
-		ShruberryCreationForm	form("Garden");
-		Bureaucrat				globox("Globox", 150);
+		Intern	glab;
+		AForm	*form;
 
-		std::cout << form << std::endl;
-		form.beSigned(globox);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		RobotomyRequestForm	form("Baba");
-		Bureaucrat			globglob("Globglob", 1);
-		Bureaucrat			glabglab("Glabglab", 150);
-		
-		form.beSigned(globglob);
-		form.execute(glabglab);
+		form = glab.makeForm("SHRuberry CrEaTiOn", "Bruuuuuuuh");
+		std::cout << *form << std::endl;
+		delete form;
+		form = glab.makeForm("PreSIdeNTIal PaRdOn", "President");
+		std::cout << *form  << std::endl;
+		delete form;
+		form = glab.makeForm("RoBOTomY ReQuEsT", "Robot");
+		std::cout << *form << std::endl;
+		delete form;
+		form = glab.makeForm("Roobotomy Request", "mmmh");
+		delete form;
 	}
 	catch(const std::exception& e)
 	{
