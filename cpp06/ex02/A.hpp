@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:59:28 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 11:03:37 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 14:42:56 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 class A : public Base
 {
-	~A();
+	public:
+		~A();
 };
 
 #endif

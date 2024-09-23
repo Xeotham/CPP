@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:59:06 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 11:18:05 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 14:43:58 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <iostream>
-#include <random>
 #include <ctime>
+#include <cstdlib>
 
 Base::~Base()
 {
@@ -55,20 +55,27 @@ void	identify(Base &p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
+		A a = dynamic_cast<A&>(p);
 		std::cout << "Type: A" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		try
 		{
-			dynamic_cast<B&>(p);
+			B b = dynamic_cast<B&>(p);
+			std::cout << "Type: B" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			try
+			{
+				C c = dynamic_cast<C&>(p);
+				std::cout << "Type: C" << std::endl;
+			}
+			catch (const std::exception &e)
+			{
+				std::cout << "The reference is from none of the knowk class." << std::endl;
+			}
 		}
-		
-		std::cerr << e.what() << std::endl;
 	}
 }
