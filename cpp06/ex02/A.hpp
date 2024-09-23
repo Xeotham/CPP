@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 14:28:04 by mhaouas          ###   ########.fr       */
+/*   Created: 2024/09/23 10:59:28 by mhaouas           #+#    #+#             */
+/*   Updated: 2024/09/23 11:03:37 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef A_HPP
+# define A_HPP
 
-#include "WrongAnimal.hpp"
+#include "Base.hpp"
 
-class	WrongCat : public WrongAnimal
+class A : public Base
 {
-	public:
-		WrongCat();
-		WrongCat(const WrongCat &other);
-		~WrongCat();
-	public:
-		void	makeSound() const;
-	public:
-		WrongCat &operator=(const WrongCat &other);
+	~A();
 };
 
 #endif

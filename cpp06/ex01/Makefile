@@ -2,10 +2,10 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = ex00
+NAME = ex01
 
 SRCS =	main.cpp \
-		ScalarConverter.cpp
+		Serializer.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

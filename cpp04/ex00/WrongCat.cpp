@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 17:21:11 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/23 14:29:42 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ WrongCat &WrongCat::operator=(const WrongCat &src)
 	if (this != &src)
 		this->_type = src._type;
 	return (*this);
+}
+
+void	WrongCat::makeSound() const
+{
+	std::cout << "Wrong Meow! Wrong Meow!" << std::endl;
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 14:28:04 by mhaouas          ###   ########.fr       */
+/*   Created: 2024/09/23 10:18:01 by mhaouas           #+#    #+#             */
+/*   Updated: 2024/09/23 10:56:22 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-#include "WrongAnimal.hpp"
+#include <stdint.h>
 
-class	WrongCat : public WrongAnimal
+typedef struct s_data
+{
+	int	data;
+}	t_data;
+
+
+class Serializer
 {
 	public:
-		WrongCat();
-		WrongCat(const WrongCat &other);
-		~WrongCat();
-	public:
-		void	makeSound() const;
-	public:
-		WrongCat &operator=(const WrongCat &other);
+		~Serializer();
+		static uintptr_t	serialize(t_data *ptr);
+		static t_data			*deserialize(uintptr_t raw);
+	private:
+		Serializer();
+		Serializer(const Serializer &new_serializer);
+		Serializer	&operator=(const Serializer &new_serializer);
 };
+
 
 #endif
