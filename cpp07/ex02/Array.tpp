@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:28:57 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/24 16:20:36 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/24 16:23:53 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,18 @@ Array<T>::Array(const Array &new_array)
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-	this->_arr = new T [n];
-	this->_size = n;
-	for (unsigned int i = 0; i < n; i++)
-		this->_arr[i] = 0;
+	try
+	{
+		this->_arr = new T [n];
+		this->_size = n;
+		for (unsigned int i = 0; i < n; i++)
+			this->_arr[i] = 0;
+	}
+	catch(const std::exception& e)
+	{
+		throw (e);
+	}
+
 }
 
 template <typename T>
