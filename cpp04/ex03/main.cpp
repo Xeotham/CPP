@@ -54,12 +54,14 @@ int main()
 		globglob.use(0, glabglab);
 		globglob.use(2, glabglab);
 		tmp = globglob.getMateria(0);
+		glabglab.equip(tmp);
 		globglob.unequip(0);
+		glabglab.equip(tmp);
+		glabglab.use(0, globglob);
 		globglob.use(0, glabglab);
 		globglob.use(3, glabglab);
 		globglob.use(120, glabglab);
 		delete src;
-		delete tmp;
 	}
 	return (0);
 }

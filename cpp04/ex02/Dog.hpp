@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 16:18:16 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/25 08:51:19 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ class	Dog : public Animal
 		Dog(const Dog &other);
 		~Dog();
 	public:
-		void makeSound() const;
+		void		think(int idx, const std::string &idea);
+		std::string	speak(int idx) const;
+		void		makeSound() const;
 	public:
 		Dog &operator=(const Dog &other);
 	private:
-		Brain *brain;
+		Brain *_brain;
 };
 
 #endif

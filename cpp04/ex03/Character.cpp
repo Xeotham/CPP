@@ -14,6 +14,7 @@
 
 Character::Character()
 {
+	this->_name = "Nameless";
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 }
@@ -27,6 +28,8 @@ Character::Character(const std::string &name)
 
 Character::Character(const Character &src)
 {
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
 	*this = src;
 }
 
@@ -34,7 +37,7 @@ Character::~Character()
 {
 	for(int i = 0; i < 4; i++)
 	{
-		if (this->_inventory[i])
+		if (this->_inventory[i] && this == this->_inventory[i]->getOwner())
 			delete this->_inventory[i];
 	}
 }
@@ -64,12 +67,20 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+	if (!m)
+		return ;
+	if (m->getOwner())
+	{
+		std::cerr << "The materia is already equiped by someone else." << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!this->_inventory[i])
 		{
 			this->_inventory[i] = m;
-			break;
+			m->setOwner(*this);
+			return ;
 		}
 	}
 }
@@ -77,7 +88,10 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
+	{
+		this->_inventory[idx]->unsetOwner();
 		this->_inventory[idx] = NULL;
+	}
 }
 
 void Character::use(int idx, ICharacter &target)

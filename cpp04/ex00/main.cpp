@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:13 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 15:08:43 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/25 08:12:18 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main()
 		const WrongAnimal*	goofy_ahah_doggo = new GoofDog();
 		const WrongAnimal*	kittyto = new WrongCat();
 		GoofDog				pluto;
+		WrongCat			garfield;
 
 		std::cout << goofy_ahah_doggo->getType() << std::endl;
 		std::cout << kittyto->getType() << std::endl;
@@ -67,6 +68,8 @@ int main()
 		delete goofy_ahah_doggo;
 		delete kittyto;
 		delete random_animal;
+		pluto.makeSound();
+		garfield.makeSound();
 		const_cast<WrongAnimal*&>(goofy_ahah_doggo) = &pluto;
 		std::cout << goofy_ahah_doggo->getType() << std::endl;
 		goofy_ahah_doggo->makeSound();

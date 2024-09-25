@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 16:18:02 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/25 08:51:23 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ class	Cat : public Animal
 		Cat(const Cat &other);
 		~Cat();
 	public:
-		void makeSound() const;
+		void		think(int idx, const std::string &idea);
+		std::string	speak(int idx) const;
+		void		makeSound() const;
 	public:
 		Cat &operator=(const Cat &other);
 	private:
-		Brain *brain;
+		Brain *_brain;
 };
 
 #endif

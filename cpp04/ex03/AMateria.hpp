@@ -24,14 +24,18 @@ class AMateria
 		AMateria(const AMateria &src);
 		virtual ~AMateria();
 	public:
-		std::string const &getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter &target);
+		std::string const	&getType() const;
+		virtual AMateria*	clone() const = 0;
+		virtual void 		use(ICharacter &target);
+		ICharacter const	*getOwner() const;
+		void				setOwner(ICharacter &new_owner);
+		void				unsetOwner();
 	public:
 		AMateria &operator=(const AMateria &rhs);
 	protected:
 		AMateria();
 	protected:
+		ICharacter	*_owner;
 		std::string _type;
 };
 

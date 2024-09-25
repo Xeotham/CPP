@@ -14,15 +14,18 @@
 
 AMateria::AMateria()
 {
+	this->_owner = NULL;
 }
 
 AMateria::AMateria(std::string const &type)
 {
+	this->_owner = NULL;
 	this->_type = type;
 }
 
 AMateria::AMateria(const AMateria &src)
 {
+	this->_owner = NULL;
 	*this = src;
 }
 
@@ -50,4 +53,20 @@ void AMateria::use(ICharacter &target)
 AMateria *AMateria::clone() const
 {
 	return (NULL);
+}
+
+ICharacter const	*AMateria::getOwner() const
+{
+	return (this->_owner);
+}
+
+void	AMateria::setOwner(ICharacter &new_owner)
+{
+	if (!this->_owner)
+		this->_owner = &new_owner;
+}
+
+void	AMateria::unsetOwner()
+{
+	this->_owner = NULL;
 }
