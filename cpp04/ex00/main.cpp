@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:13 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/25 08:12:18 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/25 15:25:01 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main()
 		Dog				ScoobyDoo;
 		Cat				Sylvester;
 
+		std::cout << random_animal->getType() << std::endl;
 		std::cout << doggo->getType() << std::endl;
 		std::cout << catito->getType() << std::endl;
 		std::cout << idefix->getType() << std::endl;
@@ -60,6 +61,7 @@ int main()
 		GoofDog				pluto;
 		WrongCat			garfield;
 
+		std::cout << random_animal->getType() << std::endl;
 		std::cout << goofy_ahah_doggo->getType() << std::endl;
 		std::cout << kittyto->getType() << std::endl;
 		goofy_ahah_doggo->makeSound();

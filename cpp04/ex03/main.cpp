@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:44:42 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/17 10:06:03 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/25 16:48:00 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,27 @@ int main()
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
+		src->learnMateria(new Ice());
 		ICharacter* me = new Character("me");
+		ICharacter* notMe = new Character("notme");
+		notMe->equip(src->createMateria("ice"));
+		notMe->equip(src->createMateria("cure"));
+		notMe->equip(src->createMateria("cure"));
+		*notMe = *me;
+		
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
 		me->equip(tmp);
 		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		tmp = src->createMateria("fireball");
 		me->equip(tmp);
 		ICharacter* bob = new Character("bob");
 		me->use(0, *bob);
 		me->use(1, *bob);
 		delete bob;
 		delete me;
+		delete notMe;
 		delete src;
 	}
 	std::cout << std::endl;
