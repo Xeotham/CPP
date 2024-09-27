@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:19:54 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/16 16:41:31 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/27 10:02:44 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,12 @@ void MateriaSource::learnMateria(AMateria *m)
 		if (!this->_materia[i])
 		{
 			this->_materia[i] = m;
-			break;
+			std::cout << "The materia " << m->getType() << " was learn." << std::endl;
+			return ;
 		}
 	}
+	std::cout << "Couldn't learn the " << m->getType() << " materia." << std::endl;
+
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
@@ -70,7 +73,11 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_materia[i] && this->_materia[i]->getType() == type)
+		{
+			std::cout << "Just create a " << type << " materia." << std::endl;
 			return (this->_materia[i]->clone());
+		}
 	}
+	std::cout << "Couldn't create the " << type << " materia because it wasn't learn." << std::endl;
 	return (NULL);
 }

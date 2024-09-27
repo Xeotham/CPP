@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:44:42 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/25 16:48:00 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/27 10:05:07 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,9 @@ int main()
 		me->equip(tmp);
 		tmp = src->createMateria("fireball");
 		me->equip(tmp);
-		ICharacter* bob = new Character("bob");
-		me->use(0, *bob);
-		me->use(1, *bob);
-		delete bob;
+		Character bob("Bob");
+		me->use(0, bob);
+		me->use(1, bob);
 		delete me;
 		delete notMe;
 		delete src;

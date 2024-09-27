@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:19:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/11 17:20:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/27 09:39:28 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Animal::Animal()
 {
 	std::cout << "Animal constructor called" << std::endl;
-	this->_type = "";
+	this->_type = "Typeless";
 }
 
 Animal::Animal(const Animal &src)

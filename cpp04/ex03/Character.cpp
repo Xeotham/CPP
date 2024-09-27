@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:18:36 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/17 10:06:24 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/27 09:57:12 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,12 @@ void Character::equip(AMateria *m)
 		if (!this->_inventory[i])
 		{
 			this->_inventory[i] = m;
+			std::cout << this->getName() << " equiped a " << m->getType() << " materia in his inventory." << std::endl; 
 			m->setOwner(*this);
 			return ;
 		}
 	}
+	std::cout << this->getName() << " couldn't equip a " << m->getType() << " materia because his inventory is full." << std::endl; 
 }
 
 void Character::unequip(int idx)
@@ -90,6 +92,7 @@ void Character::unequip(int idx)
 	if (idx >= 0 && idx < 4)
 	{
 		this->_inventory[idx]->unsetOwner();
+		std::cout << this->getName() << " unequiped a " << this->_inventory[idx]->getType() << " materia." << std::endl;
 		this->_inventory[idx] = NULL;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:45:20 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/25 16:28:56 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/27 09:44:21 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AMateria::AMateria()
 {
 	this->_owner = NULL;
-	this->_type = "";
+	this->_type = "Typeless Materia";
 }
 
 AMateria::AMateria(std::string const &type)
