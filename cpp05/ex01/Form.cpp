@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/20 13:09:05 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:50:01 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ int	Form::getExecGrade() const
 void	Form::beSigned(Bureaucrat &signer)
 {
 	if (this->getIsSigned() == true)
+	{
+		std::cout << "The form is already signed." << std::endl;
 		return ;
+	}
 	if (signer.getGrade() > this->getSignGrade())
 		throw (Form::GradeTooLowException());
 	this->_is_signed = true;
@@ -78,16 +81,20 @@ Form	&Form::operator=(const Form &new_form)
 
 const char	*Form::GradeTooHighException::what() const throw()
 {
-	return ("The grade was set too high.");
+	return ("the grade was set too high.");
 }
 
 const char	*Form::GradeTooLowException::what() const throw()
 {
-	return ("The grade was set too low.");
+	return ("the grade was set too low.");
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &in)
 {
-	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade() << ".";
+	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade();
+	if (in.getIsSigned())
+		std::cout << ", the form is signed.";
+	else
+		std::cout << ", the form isn't signed.";
 	return (out);
 }

@@ -6,21 +6,21 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:00:16 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 07:49:16 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:51:06 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 72, 45), _target("")
+PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 25, 5), _target("")
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("Presidential Pardon", 72, 45), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("Presidential Pardon", 25, 5), _target(target)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &new_form) : AForm("Presidential Pardon", 72, 45), _target(new_form._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &new_form) : AForm("Presidential Pardon", 25, 5), _target(new_form._target)
 {
 }
 

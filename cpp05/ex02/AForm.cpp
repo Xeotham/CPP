@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 07:47:28 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:50:33 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ void	AForm::setExecGrade(const int new_exec_grade)
 void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (this->getIsSigned() == true)
+	{
+		std::cout << "The form is already signed." << std::endl;
 		return ;
+	}
 	if (signer.getGrade() > this->getSignGrade())
 		throw (AForm::GradeTooLowException());
 	this->_is_signed = true;

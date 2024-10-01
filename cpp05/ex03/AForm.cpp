@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 07:48:54 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:50:23 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ void	AForm::setExecGrade(const int new_exec_grade)
 void	AForm::beSigned(Bureaucrat &signer)
 {
 	if (this->getIsSigned() == true)
+	{
+		std::cout << "The form is already signed." << std::endl;
 		return ;
+	}
 	if (signer.getGrade() > this->getSignGrade())
 		throw (AForm::GradeTooLowException());
 	this->_is_signed = true;
@@ -105,8 +108,12 @@ const char	*AForm::FormIsntSignedException::what() const throw()
 	return ("The Form isn't signed.");
 }
 
-std::ostream	&operator<<(std::ostream &out, const AForm &in)
+std::ostream	&operator<<(std::ostream &out, const Form &in)
 {
-	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade() << ".";
+	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade();
+	if (in.getIsSigned())
+		std::cout << ", the form is signed.";
+	else
+		std::cout << ", the form isn't signed.";
 	return (out);
 }

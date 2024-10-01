@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:00:16 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 07:49:26 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/01 10:31:21 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45), _target("")
 {
+	std::srand(std::time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("Robotomy", 72, 45), _target(target)
 {
+	std::srand(std::time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &new_form) : AForm("Robotomy", 72, 45), _target(new_form._target)
 {
+	std::srand(std::time(NULL));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -36,7 +39,6 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw(AForm::FormIsntSignedException());
 	else if (executor.getGrade() > this->getExecGrade())
 		throw(AForm::GradeTooLowException());
-	std::srand(std::time(NULL));
 	int	random = std::rand();
 
 	std::cout << "Bzzzz... Vrrrr..." << std::endl;

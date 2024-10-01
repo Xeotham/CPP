@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 11:03:47 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 08:22:54 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/09/30 08:52:26 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Intern
 		Intern();
 		Intern(const Intern &new_intern);
 		~Intern();
+	public:
 		AForm	*makeForm(const std::string &form_type, const std::string &target);
 	public:
 		Intern	&operator=(const Intern &new_intern);
