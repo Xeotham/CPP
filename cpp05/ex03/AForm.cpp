@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:00:05 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/10/01 10:50:23 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/04 13:38:14 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ const char	*AForm::FormIsntSignedException::what() const throw()
 	return ("The Form isn't signed.");
 }
 
-std::ostream	&operator<<(std::ostream &out, const Form &in)
+std::ostream	&operator<<(std::ostream &out, const AForm &in)
 {
 	std::cout << in.getName() << ", sign grade: " << in.getSignGrade() << ", execution grade: " << in.getExecGrade();
 	if (in.getIsSigned())

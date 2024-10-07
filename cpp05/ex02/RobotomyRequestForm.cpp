@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:00:16 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/30 08:49:11 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/04 13:39:13 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45), _target("Somebody")
 {
+	std::srand(std::time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("Robotomy", 72, 45), _target(target)
 {
+	std::srand(std::time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &new_form) : AForm("Robotomy", 72, 45), _target(new_form._target)
 {
+	std::srand(std::time(NULL));
+
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
