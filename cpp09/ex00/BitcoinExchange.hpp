@@ -28,12 +28,10 @@ class BitcoinExchange
 	public:
 		BitcoinExchange	&operator=(const BitcoinExchange &new_bit_exch);
 	private:
-		std::map<std::time_t, double>	_bitcoin_value;
+		std::pair<std::time_t, double>	parseLine(const std::string &line);
+		std::tm							getDate(const std::string &line);
 	private:
-		class	OpenException : public std::exception
-		{
-			const char	*what() const throw();
-		};
+		std::map<std::time_t, double>	_bitcoin_value;
 };
 
 #endif

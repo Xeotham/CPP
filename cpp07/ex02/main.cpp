@@ -6,13 +6,13 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:28:18 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/24 16:26:47 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/09 15:23:28 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 
@@ -52,6 +52,7 @@ int	main()
 		}
 		std::cout << test << std::endl;
 	}
+	std::cout << std::endl;
 	{
 		Array<int> numbers(MAX_VAL);
 		int* mirror = new int[MAX_VAL];
@@ -82,7 +83,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		try
 		{
@@ -90,7 +91,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 
 		for (int i = 0; i < MAX_VAL; i++)

@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:48:29 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 09:56:55 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/07 07:41:59 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <string>
 #include <iomanip>
+#include <limits>
 
 ScalarConverter::ScalarConverter()
 {
@@ -67,7 +68,7 @@ void	ScalarConverter::is_int(long int nb)
 		std::cout << "Value in char :		Impossible." << std::endl;
 	else
 		std::cout << "Value in char :		'" << static_cast<char>(nb) << "'." << std::endl;
-	if (nb > INT_MAX || nb < INT_MIN)
+	if (nb > std::numeric_limits<int>::max() || nb < std::numeric_limits<int>::min())
 		std::cout << "Value in int :		Impossible." << std::endl;
 	else
 		std::cout << "Value in int :		" << nb << "." << std::endl;
@@ -81,7 +82,7 @@ void	ScalarConverter::is_float(float nb)
 		std::cout << "Value in char :		Impossible." << std::endl;
 	else
 		std::cout << "Value in char :		'" << static_cast<char>(nb) << "'." << std::endl;
-	if (nb < static_cast<float>(INT_MIN) || nb > static_cast<float>(INT_MAX))
+	if (nb > static_cast<float>(std::numeric_limits<int>::max()) || nb < static_cast<float>(std::numeric_limits<int>::min()))
 		std::cout << "Value in int :		Impossible." << std::endl;
 	else
 		std::cout << "Value in int :		" << static_cast<int>(nb) << "." << std::endl;
@@ -95,11 +96,11 @@ void	ScalarConverter::is_double(double nb)
 		std::cout << "Value in char :		Impossible." << std::endl;
 	else
 		std::cout << "Value in char :		'" << static_cast<char>(nb) << "'." << std::endl;
-	if (nb < static_cast<double>(INT_MIN) || nb > static_cast<double>(INT_MAX))
+	if (nb > static_cast<float>(std::numeric_limits<int>::max()) || nb < static_cast<float>(std::numeric_limits<int>::min()))
 		std::cout << "Value in int :		Impossible." << std::endl;
 	else
 		std::cout << "Value in int :		" << static_cast<int>(nb) << "." << std::endl;
-	if (nb < static_cast<double>(-__FLT_MAX__) || nb > static_cast<double>(__FLT_MAX__))
+	if (nb > static_cast<float>(std::numeric_limits<float>::max()) || nb < static_cast<float>(-std::numeric_limits<int>::max()))
 		std::cout << "Value in float :	Impossible." << std::endl;
 	else
 		std::cout << "Value in float :	" << static_cast<double>(nb) << "f." << std::endl;
@@ -135,11 +136,11 @@ void	ScalarConverter::is_inf(std::string str)
 	if (str == "-inff" || str == "+inff")
 	{
 		std::cout << "Value in float :	" << str << "." << std::endl;
-		std::cout << "Value in double :	Impossible." << std::endl;
+		std::cout << "Value in double :	" << str << "\b." << std::endl;
 	}
 	else
 	{
-		std::cout << "Value in float :	Impossible." << std::endl;
+		std::cout << "Value in float :	" << str << "f." << std::endl;
 		std::cout << "Value in double :	" << str << "." << std::endl;
 	}
 }

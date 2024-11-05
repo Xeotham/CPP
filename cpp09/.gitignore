@@ -1,0 +1,7 @@
+CMakeLists.txt
+cmake-build-debug
+*/btc
+*.o
+cpp_09
+*/data.csv
+.idea

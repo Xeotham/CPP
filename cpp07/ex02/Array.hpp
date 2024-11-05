@@ -6,7 +6,7 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:29:02 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/24 15:31:45 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/09 14:42:43 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <exception>
 #include <iostream>
+#include <cstring>
 
 template <typename T>
 class Array

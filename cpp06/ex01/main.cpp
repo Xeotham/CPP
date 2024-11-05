@@ -6,21 +6,24 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:17:31 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/23 10:56:27 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/07 07:27:36 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 int	main()
 {
+	std::srand(std::time(NULL));
 	try
 	{
 		t_data		*data = new t_data;
 		uintptr_t	intptr;
 
-		data->data = 10;
+		data->data = std::rand() % 1000;
 		std::cout << "Data before serialization: " << data->data << std::endl;
 		intptr = Serializer::serialize(data);
 		std::cout << "Data after serialization: " << Serializer::deserialize(intptr)->data << std::endl;
@@ -31,5 +34,4 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 }

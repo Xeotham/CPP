@@ -13,8 +13,17 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
 
-int	main(int ac, std::string **av)
+int	main(int ac, char **av)
 {
-	if (ac != 2)
-		std::cerr << "Wrong number of arguments (need only one arguments)." << std::endl;
+	// if (ac != 2) {
+	// 	std::cerr << "Wrong number of arguments (need only one arguments)." << std::endl;
+	// 	return (1);
+	// }
+	(void)ac;
+	try {
+		(void)av;
+		BitcoinExchange	bitcoin_exchange;
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }

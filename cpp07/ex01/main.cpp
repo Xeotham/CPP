@@ -6,27 +6,27 @@
 /*   By: mhaouas <mhaouas@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 08:34:40 by mhaouas           #+#    #+#             */
-/*   Updated: 2024/09/24 09:05:50 by mhaouas          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:37:23 by mhaouas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 #include <iostream>
 
-int	add_1(int i)
+void	add_1(int &i)
 {
-	return (i + 1);
+	i += 1;
 }
 
-void	print_array(int *arr, int size)
+template<typename T>
+void	print_value(T value)
 {
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << arr[i];
-		if (i < size - 1)
-			std::cout << ", ";
-	}
-	std::cout << std::endl;
+	std::cout << value << std::endl;
+}
+
+void	make_upper(char &value)
+{
+	value = std::toupper(value);
 }
 
 int main()
@@ -34,17 +34,17 @@ int main()
 	{
 		char	str[] = "Ceci est un test";
 
-		std::cout << "Original string: " << str << "." << std::endl;
-		iter(str, 17, toupper);
-		std::cout << "New string: " << str << "." << std::endl;
+		::iter<char>(str, 17, print_value<char>);
+		::iter<char>(str, 17, make_upper);
+		std::cout << str << std::endl;
 	}
 	{
 		int	arr[] = {1, 2, 10, 20, 30};
 
-		std::cout << "Original Array: ";
-		print_array(arr, 5);
-		iter(arr, 5, add_1);
-		std::cout << "New Array: ";
-		print_array(arr, 5);
+		std::cout << "Original array:" << std::endl;
+		::iter<int>(arr, 5, print_value<int>);
+		::iter<int>(arr, 5, add_1);
+		std::cout << "New array: " << std::endl;
+		::iter(arr, 5, print_value<int>);
 	}
 }
