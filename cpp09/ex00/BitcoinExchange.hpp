@@ -19,6 +19,10 @@
 #include <ctime>
 #include <exception>
 
+typedef std::pair<std::time_t, std::pair<std::string, double> > t_data;
+typedef std::map<std::time_t, std::pair<std::string, double> > t_data_base;
+
+
 class BitcoinExchange
 {
 	public:
@@ -27,11 +31,15 @@ class BitcoinExchange
 		~BitcoinExchange();
 	public:
 		BitcoinExchange	&operator=(const BitcoinExchange &new_bit_exch);
+	public:
+		void	testFile(const std::string &file);
 	private:
-		std::pair<std::time_t, double>	parseLine(const std::string &line);
-		std::tm							getDate(const std::string &line);
+		t_data		parseLine(const std::string &line);
+		std::tm		getDate(const std::string &line);
+		double		getValue(const std::string &line);
+		void		checkValue(const std::string &value);
 	private:
-		std::map<std::time_t, double>	_bitcoin_value;
+		t_data_base	_bitcoin_value;
 };
 
 #endif

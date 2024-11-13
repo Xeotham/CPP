@@ -10,16 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 #include <iostream>
 
 int	main(int ac, char **av)
 {
 	try {
-		if (ac != 2)
-			throw (std::invalid_argument("Error: Wrong number of arguments (need only one arguments)."));
-		BitcoinExchange	bitcoin_exchange;
-		bitcoin_exchange.testFile(av[1]);
+		if (ac < 3)
+			throw (std::invalid_argument("Too few arguments arguments."));
+		PmergeMe(av + 1).sort();
 	} catch (std::exception &e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 		return (1);
