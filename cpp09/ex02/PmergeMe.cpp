@@ -71,7 +71,6 @@ double PmergeMe::vectorSort() {
 
 	start = clock();
 	this->createVecPairs();
-	this->sortVecPairs();
 	this->makeBiggestVecLst();
 	this->makeSmallestVecLst();
 	this->finalVecMerge();
@@ -80,22 +79,15 @@ double PmergeMe::vectorSort() {
 }
 
 void	PmergeMe::createVecPairs() {
-	for (t_vec::iterator iter = this->_vec_tab.begin(); iter != this->_vec_tab.end(); iter++) {
-		if (iter + 1 == this->_vec_tab.end())
-			break;
-		this->_vec_pairs.push_back(std::make_pair(*iter, *(iter + 1)));
-		iter += 1;
+	for (t_vec::iterator iter = this->_vec_tab.begin(); iter < this->_vec_tab.end() - 1; iter += 2) {
+		if (*iter < *(iter + 1))
+			this->_vec_pairs.push_back(std::make_pair( *(iter + 1), *iter));
+		else
+			this->_vec_pairs.push_back(std::make_pair( *iter, *(iter + 1)));
 	}
 	if (this->_vec_tab.size() % 2 != 0)
 		this->_vec_smallest.push_back(*(this->_vec_tab.end() - 1));
 	this->_vec_tab.clear();
-}
-
-void PmergeMe::sortVecPairs() {
-	for (t_vec_pairs::iterator iter = this->_vec_pairs.begin(); iter != this->_vec_pairs.end(); iter++) {
-		if (iter->first < iter->second)
-			std::swap(iter->first, iter->second);
-	}
 }
 
 void PmergeMe::makeBiggestVecLst() {
@@ -112,8 +104,25 @@ void PmergeMe::makeBiggestVecLst() {
 }
 
 void PmergeMe::makeSmallestVecLst() {
-	for (t_vec_pairs::iterator iter = this->_vec_pairs.begin(); iter != this->_vec_pairs.end(); iter++)
-		this->_vec_smallest.push_back(iter->second);
+	size_t	i = 0;
+	size_t	j = 0;
+	size_t	save = 0;
+	t_vec	partition;
+
+	for (t_vec_pairs::iterator iter = this->_vec_pairs.begin(); iter != this->_vec_pairs.end(); iter++, i++) {
+		j = 0;
+		while (j < (static_cast<u_int64_t>(1) << (i + 1)) - save && iter < this->_vec_pairs.end()) {
+			partition.push_back(iter->second);
+			++iter;
+			++j;
+		}
+		std::cout << j << std::endl;
+		save = j;
+		std::reverse(partition.begin(), partition.end());
+		this->_vec_smallest.insert(this->_vec_smallest.end(), partition.begin(), partition.end());
+		partition.clear();
+		--iter;
+	}
 }
 
 t_vec::iterator	PmergeMe::findVecPairs(int value) {
@@ -152,7 +161,6 @@ double PmergeMe::listSort() {
 
 	start = clock();
 	this->createListPairs();
-	this->sortListPairs();
 	this->makeBiggestListLst();
 	this->makeSmallestListLst();
 	this->finalListMerge();
@@ -166,19 +174,15 @@ void	PmergeMe::createListPairs() {
 		++tmp;
 		if (tmp == this->_list_tab.end())
 			break;
-		this->_list_pairs.push_back(std::make_pair(*iter, *tmp));
+		if (*iter < *tmp)
+			this->_list_pairs.push_back(std::make_pair( *tmp, *iter));
+		else
+			this->_list_pairs.push_back(std::make_pair( *iter, *tmp));
 		iter = tmp;
 	}
 	if (this->_list_tab.size() % 2 != 0)
 		this->_list_smallest.push_back(_list_tab.back());
 	this->_list_tab.clear();
-}
-
-void PmergeMe::sortListPairs() {
-	for (t_list_pairs::iterator iter = this->_list_pairs.begin(); iter != this->_list_pairs.end(); iter++) {
-		if (iter->first < iter->second)
-			std::swap(iter->first, iter->second);
-	}
 }
 
 void PmergeMe::makeBiggestListLst() {
@@ -195,8 +199,24 @@ void PmergeMe::makeBiggestListLst() {
 }
 
 void PmergeMe::makeSmallestListLst() {
-	for (t_list_pairs::iterator iter = this->_list_pairs.begin(); iter != this->_list_pairs.end(); iter++)
-		this->_list_smallest.push_back(iter->second);
+	size_t	i = 0;
+	size_t	j = 0;
+	size_t	save = 0;
+	t_list	partition;
+
+	for (t_list_pairs::iterator iter = this->_list_pairs.begin(); iter != this->_list_pairs.end(); iter++, i++) {
+		j = 0;
+		while (j <= (1 << (i + 1)) - save && getDist(_list_pairs.begin(), iter) < this->_vec_pairs.size()) {
+			partition.push_back(iter->second);
+			++iter;
+			++j;
+		}
+		save = j;
+		partition.reverse();
+		this->_list_smallest.splice(this->_list_smallest.end(), partition);
+		partition.clear();
+		--iter;
+	}
 }
 
 t_list::iterator	PmergeMe::findListPairs(int value) {
@@ -215,6 +235,16 @@ void PmergeMe::finalListMerge() {
 }
 
 size_t	PmergeMe::getDist(t_list::iterator start, t_list::iterator end) {
+	size_t	dist = 0;
+
+	while (start != end) {
+		++dist;
+		++start;
+	}
+	return (dist);
+}
+
+size_t	PmergeMe::getDist(t_list_pairs::iterator start, t_list_pairs::iterator end) {
 	size_t	dist = 0;
 
 	while (start != end) {

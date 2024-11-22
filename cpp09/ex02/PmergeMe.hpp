@@ -41,6 +41,7 @@ class PmergeMe {
 	t_list::iterator		findListPairs(int value);
 	void					finalListMerge();
 	size_t					getDist(t_list::iterator start, t_list::iterator end);
+	size_t					getDist(t_list_pairs::iterator start, t_list_pairs::iterator end);
 	t_list::iterator		getMiddle(t_list::iterator begin, t_list::iterator end);
 	t_list::iterator		listBinarySearch(t_list::iterator begin, t_list::iterator end, int value);
 	private:
