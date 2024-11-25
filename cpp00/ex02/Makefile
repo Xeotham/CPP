@@ -3,7 +3,7 @@ CPP = c++
 #=================== FLAGS ==================#
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
 #=================== NAME ===================#
-NAME = PhoneBook
+NAME = Account
 #================== SOURCES =================#
 SRCS =	tests.cpp \
 		Account.cpp
